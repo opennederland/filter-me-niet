@@ -11,6 +11,6 @@
 <body class="is-start">
     <strong>upload bestand</strong>
     <span class="c-strike">of</span>
-    <a href="/wizard.php" class="c-button">upload doelbewust</a>
+    <a href="wizard.php" class="c-button">upload doelbewust</a>
 </body>
 </html>
