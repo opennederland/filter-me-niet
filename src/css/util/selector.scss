@@ -1,0 +1,16 @@
+@function text-inputs($types: null, $modifier: "") {
+  $return: ();
+
+  $all-types: text password date datetime datetime-local month week email number
+    search tel time url color;
+
+  @if $types == null {
+    $types: $all-types;
+  }
+
+  @each $type in $types {
+    $return: append($return, unquote("[type='#{$type}']#{$modifier}"), comma);
+  }
+
+  @return $return;
+}
