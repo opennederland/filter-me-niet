@@ -6,5 +6,9 @@ Nederlands | Open Nederland is met financiële steun van het SIDN fonds en bevri
 
 English | With the financial support of the foundation for internet domain registration in the Netherlands (SIDN) and friends like Kennisnet the team at Open Nederland is developing a tool to help uploaders with a legal text, a "declaration of intent" before they upload. This might help to bridge the gap between uploaders and web portals (with lenghty Terms of Service documents). Hopefully this "upload + my intention" button will contribute to the EU solution during the new copyright law implementation (Article 17 - upload filters). A solution that will benefit the uploader/rightsholder, web portal and the national law. Would you like to contribute or learn more. Please contact bestuur@opennederland.nl
 
-
-You can translate the text of the wizard in wizard.php and the parts of the "declaration of intent" can be found in translations.js
+You can translate the text of the tool in these files:
+index.php
+wizard.php
+translations.js
+dist/js/main.js
+src/js/modules/steps.js
