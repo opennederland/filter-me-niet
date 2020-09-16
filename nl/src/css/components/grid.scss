@@ -1,0 +1,12 @@
+.c-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  column-gap: 0.875rem;
+  row-gap: 0.875rem;
+
+  &--full-width {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}

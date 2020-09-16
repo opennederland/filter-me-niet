@@ -1,0 +1,15 @@
+@function get-color($key) {
+  @if map-has-key($color-palette, $key) {
+    @return map-get($color-palette, $key);
+  } @else {
+    @error 'The key \'#{$key}\' doesn\'t exist in the $color-palette.';
+  }
+}
+
+@function tint($color, $amount) {
+  @return mix(white, $color, $amount);
+}
+
+@function shade($color, $amount) {
+  @return mix(black, $color, $amount);
+}

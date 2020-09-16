@@ -1,0 +1,18 @@
+@import "./util/util.scss";
+
+// Fonts
+$font-family-body: "Open Sans", sans-serif;
+
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+// Colors
+$color-palette: (
+  primary: #008bff,
+);
+
+$light-grey: #d9dee1;
+
+$text-color: black;

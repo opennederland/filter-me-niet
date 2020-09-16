@@ -1,0 +1,254 @@
+.c-step {
+  margin: 0 0 0.75rem;
+  color: $light-grey;
+  position: relative;
+
+  @include breakpoint(medium) {
+    margin-left: 80px;
+  }
+
+  &.is-active {
+    background: get-color(primary);
+    color: white;
+  }
+
+  &.is-done {
+    background: $light-grey;
+    color: $text-color;
+
+    &:hover {
+      background: shade($light-grey, 5);
+      cursor: pointer;
+    }
+  }
+
+  &__label {
+    padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+    margin-bottom: 0;
+    border: 2px dashed $light-grey;
+    position: relative;
+
+    .is-active &,
+    .is-done & {
+      border-color: transparent;
+    }
+
+    .is-done & {
+      background-image: url("/dist/images/icons/expand_more.svg");
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: 40px 100%;
+    }
+
+    [data-step-label] {
+      display: block;
+
+      .is-done & {
+        display: none;
+      }
+    }
+
+    [data-step-value] {
+      display: none;
+
+      .is-done & {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    padding: 0.75rem calc(0.75rem + 2px);
+    display: none;
+    position: relative;
+
+    .is-active & {
+      display: block;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      z-index: 5;
+      height: 0.75rem;
+      width: 100%;
+      display: none;
+      content: "";
+
+      .show-info & {
+        display: block;
+      }
+    }
+
+    &::before {
+      top: 0;
+      background: linear-gradient(
+        to bottom,
+        get-color(primary),
+        rgba(get-color(primary), 0)
+      );
+    }
+
+    &::after {
+      bottom: 0;
+      background: linear-gradient(
+        to top,
+        get-color(primary),
+        rgba(get-color(primary), 0)
+      );
+    }
+  }
+
+  &__info-toggle {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    display: none;
+    transform: translateY(-50%) rotate(180deg);
+    cursor: pointer;
+
+    .is-active & {
+      display: block;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    overflow-y: auto;
+    overscroll-behavior: none;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(get-color(primary), 0.9);
+
+    .show-info & {
+      display: flex;
+    }
+
+    p {
+      margin: auto;
+    }
+  }
+
+  &__footer {
+    padding: 0.75rem calc(0.75rem + 2px);
+    background: black;
+    color: white;
+    display: none;
+
+    .is-active & {
+      display: block;
+    }
+  }
+
+  &__identifier {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 10px;
+    height: 10px;
+    box-sizing: content-box;
+    border: 5px solid $light-grey;
+    border-radius: 50%;
+    background: white;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 1;
+    left: -52px;
+    top: 16px;
+
+    @include breakpoint(medium) {
+      display: flex;
+    }
+
+    .is-active &,
+    .is-done & {
+      width: 45px;
+      height: 45px;
+      top: 0;
+    }
+
+    .is-active & {
+      background: get-color(primary);
+    }
+
+    .is-done & {
+      background: $light-grey;
+    }
+
+    &__index {
+      display: none;
+
+      .is-active & {
+        display: inline;
+      }
+    }
+
+    &__check {
+      display: none;
+
+      .is-done & {
+        display: inline;
+      }
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  &::before {
+    @include breakpoint(medium) {
+      display: block;
+      width: 5px;
+      height: calc(100% + 0.75rem);
+      content: "";
+      transform: translateX(-50%);
+      position: absolute;
+      left: -52px;
+      background: $light-grey;
+    }
+  }
+
+  &:first-child {
+    @include breakpoint(medium) {
+      margin-top: 6rem;
+    }
+  }
+
+  &:last-child {
+    &::before {
+      height: 20px;
+    }
+
+    .c-step__content {
+      position: relative;
+
+      &::after {
+        display: block;
+        width: 0;
+        height: 0;
+        content: "";
+        border: 1rem solid transparent;
+        border-bottom: 0;
+        border-top-color: get-color(primary);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

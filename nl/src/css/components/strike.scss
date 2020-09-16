@@ -1,0 +1,24 @@
+.c-strike {
+  margin: 1.5rem 0;
+  position: relative;
+
+  &::before,
+  &::after {
+    display: block;
+    content: "";
+    width: 10px;
+    height: 2px;
+    background: $light-grey;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+  }
+
+  &::before {
+    left: -20px;
+  }
+
+  &::after {
+    right: -20px;
+  }
+}

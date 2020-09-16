@@ -1,0 +1,32 @@
+.c-form-element {
+  &.is-hidden {
+    display: none;
+  }
+
+  label {
+    line-height: 2;
+    font-weight: $font-weight-semi-bold;
+  }
+
+  #{text-inputs()},
+  select {
+    display: block;
+    width: 100%;
+    margin: 0 0 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 0;
+    border-radius: 0;
+    appearance: none;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: $font-weight-semi-bold;
+  }
+
+  select {
+    background-image: url("/dist/images/icons/expand_more.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 40px 100%;
+    cursor: pointer;
+  }
+}
