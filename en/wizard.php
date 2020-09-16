@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="dist/css/main.css?917" />
+    <link rel="stylesheet" href="dist/css/main.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -298,6 +298,6 @@
       </div>
     </div>
 
-    <script src="dist/js/main.js?917"></script>
+    <script src="dist/js/main.js"></script>
   </body>
 </html>
